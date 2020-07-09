@@ -4,7 +4,10 @@
     const fizz = document.getElementById('fizz').value;
     const buzz = document.getElementById('buzz').value;
     const ul = document.querySelector('ul');
-    if (isNaN(fizz) || isNaN(buzz) || fizz === '' || buzz === '') {
+    const fizzFloat = parseFloat(fizz);
+    const buzzFloat = parseFloat(buzz);
+
+    if (Number.isInteger(fizzFloat) === false|| Number.isInteger(buzzFloat) === false|| fizz === '' || buzz === '') {
       const li = document.createElement('li');
       li.textContent = `整数値を入力してください`;
       ul.appendChild(li);
